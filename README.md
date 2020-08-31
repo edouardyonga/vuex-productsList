@@ -1,4 +1,4 @@
-# vuex-tuto
+# vuex products store
 
 ## Project setup
 ```
