@@ -11,21 +11,23 @@
     </div>    
 </template>
 <script>
+import { mapGetters } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
     computed:{
         products(){
             return this.$store.state.products;
         },
-        saleProducts(){
-            return this.$store.getters.saleProducts
-        }
+        ...mapGetters([
+            'saleProducts'
+        ])
 
     },
     methods:{
-        reducePrice: function(payload) {
-            this.$store.dispatch('reducePrice',payload)
-        }
+        ...mapActions([
+            'reducePrice'
+        ])
     }
     
 }
@@ -33,7 +35,7 @@ export default {
 <style scoped>
 #product-list-one{
     float: left;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 20%;
 }
 </style>
